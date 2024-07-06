@@ -4,16 +4,19 @@
 
 # 일반항 구하는 함수 정의
 def general(n, memo):
-    if memo[n] != -1: #중복 계산 제외시키기 (메모이제이션)
+    if n <= 0:
+        return 0
+    if memo[n] != -1: # 중복 계산 제외시키기 (메모이제이션)
         return memo[n]
-    if n == 1:
-        memo[n] = 1
-    elif n == 2:
-        memo[n] = 2
-    elif n == 3:
-        memo[n] = 3
-    else:
-        memo[n] = general(n - 3, memo) + (n // 2) + 1
+    for i in range(1, n + 1):
+        if i == 1:
+            memo[i] = 1
+        elif i == 2:
+            memo[i] = 2
+        elif i == 3:
+            memo[i] = 3
+        else:
+            memo[i] = memo[i - 3] + (i // 2) + 1
     return memo[n]
 
 
