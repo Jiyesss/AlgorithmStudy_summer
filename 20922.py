@@ -27,12 +27,12 @@ start = 0 # sequence의 시작 0으로 초기화
 
 for end in range(n): # sequence의 마지막 0으로 초기화
 
-    if seq[end] in overk: # 수열에 포함된 원소의 개수가 K개보다 큰 원소인 경우
-        overk[seq[end]] += 1 # 원소 count 추가 
+    if seq[end] in overk: # overk를 고려해야 하는 경우
+        overk[seq[end]] += 1 # overk 원소의 count를 1 증가시킴
     
-        while overk[seq[end]] > k: # 부분 수열의 원소의 개수가 K개를 넘었을 때
+        while overk[seq[end]] > k: # 부분 수열의 원소의 개수가 K개를 넘었을 때 
             if seq[start] in overk: # start가 수열에 포함된 원소의 개수가 K보다 큰 원소일 경우
-                overk[seq[start]] -= 1 # 원소 count 감소
+                overk[seq[start]] -= 1 # overk 원소 count 감소시킴
             start += 1 # start를 앞으로 이동시킴
     
     longest = max(longest, end - start + 1)
