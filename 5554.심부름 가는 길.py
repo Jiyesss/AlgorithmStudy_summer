@@ -7,3 +7,4 @@ sec =  sum % 60
 
 print(min)
 print(sec)
+# print
