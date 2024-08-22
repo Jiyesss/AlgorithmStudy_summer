@@ -15,7 +15,7 @@ def decrease(integer):
     # 1의 자리가 아닌 경우
     else:
         for i in range(len(integer)-1):
-            
+        
             if integer[i] <= integer[i+1]: # 줄어드는 수가 아닌 경우
                 return False
             
@@ -34,7 +34,7 @@ for i in range(1000001):
     # 줄어드는 수에 해당하는 경우
     if decrease(i):
         count += 1
-    
+
     # 종료조건
     if count == n:
         print(i)
