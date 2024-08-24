@@ -31,6 +31,7 @@ array = [] # 현재 탐색중인 숫자 담을거
 decrease = [] # 줄어드는 수 담을거
 dfs()
 
+print(decrease)
 try:
     print(sorted(decrease)[n-1])
 
